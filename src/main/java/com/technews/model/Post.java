@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -13,7 +15,7 @@ import java.util.Objects;
 public class Post implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Intger id;
+    private Integer id;
     private String title;
     private String postUrl;
     @Transient
@@ -32,7 +34,7 @@ public class Post implements Serializable {
     @OneToMany(mappedBy = "postId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Comment> comments;
 
-    public Post(Intger id, String title, String postUrl, String userName, int voteCount, Integer userId, Date postedAt, Date updatedAt, List<Comment> comments) {
+    public Post(Integer id, String title, String postUrl, String userName, int voteCount, Integer userId, Date postedAt, Date updatedAt, List<Comment> comments) {
         this.id = id;
         this.title = title;
         this.postUrl = postUrl;
@@ -44,11 +46,11 @@ public class Post implements Serializable {
         this.comments = comments;
     }
 
-    public Intger getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Intger id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
