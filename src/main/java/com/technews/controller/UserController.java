@@ -4,6 +4,7 @@ import com.technews.model.Post;
 import com.technews.model.User;
 import com.technews.repository.UserRepository;
 import com.technews.repository.VoteRepository;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

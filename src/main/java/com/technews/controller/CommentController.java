@@ -30,7 +30,7 @@ public class CommentController {
     }
 
     @PutMapping("/api/updateComment")
-    public Comment updateComment(@RequestBodys Comment comment) {
+    public Comment updateComment(@RequestBody Comment comment) {
         return repository.save(comment);
     }
 
